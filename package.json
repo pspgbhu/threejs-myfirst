@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server --inline --hot"
   },
   "keywords": [
     "three"
@@ -15,5 +15,8 @@
   "devDependencies": {
     "html-webpack-plugin": "^2.28.0",
     "webpack": "^2.4.1"
+  },
+  "dependencies": {
+    "three": "^0.85.2"
   }
 }

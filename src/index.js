@@ -1,1 +1,1 @@
-console.log('a');
+var canvas = document.querySelector('#canvas');
