@@ -10,6 +10,10 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
   },
+  
+  devSever: {
+    port: 8010,
+  },
 
   // plugins: [
   //   new HtmlWebpackPlugin({
