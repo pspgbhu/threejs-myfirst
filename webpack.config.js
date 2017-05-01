@@ -3,16 +3,25 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: './src/index.js',
+    app: './src/sphere.js',
   },
 
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
   },
-  
-  devSever: {
-    port: 8010,
+
+  module: {
+    rules: [
+      {
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        loader: 'url-loader',
+        query: {
+          limit: 10000,
+          name: 'assets/[name].[ext]',
+        },
+      },
+    ],
   },
 
   // plugins: [
