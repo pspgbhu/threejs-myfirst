@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style media="screen">
+    body { margin: 0; }
+    canvas { width: 100%; height: 100% }
+    #control {
+      position: absolute;
+      bottom: 50px;
+      right: 50px;
+      color: #fff;
+    }
+
+    input {
+      color: blue;
+      background: #aaa;
+    }
+  </style>
+  <title>coordinate</title>
+</head>
+<body>
+  <div id="app"></div>
+  <div id="control">
+    <div>
+      Camera:
+      positionX<input type="number" id="positionX"/>
+      positionY<input type="number" id="positionY"/>
+      positionZ<input type="number" id="positionZ"/>
+    </div>
+    <div style="margin-top: 20px;">
+      Camera LookAt:
+      VectorX<input type="number" id="lookAtX"/>
+      VectorY<input type="number" id="lookAtY"/>
+      VectorZ<input type="number" id="lookAtZ"/>
+      <button id="toLookAt">LookAt</button>
+    </div>
+  </div>
+  <script src="../node_modules/three/build/three.min.js" charset="utf-8"></script>
+  <script type="text/javascript" src="index.js"></script>
+  <script src="../libs/control.js" charset="utf-8"></script>
+</body>
+</html>
