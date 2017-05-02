@@ -29,18 +29,18 @@
   var lineZ = new THREE.Line(geometryZ, material);
 
   // text
-  var textX = new THREE.TextGeometry( 'X', {
-		font: font,
-		size: 10,
-		height: 3,
-		curveSegments: 12,
-		bevelEnabled: true,
-		bevelThickness: 10,
-		bevelSize: 8,
-		bevelSegments: 5
-	});
+  // var textX = new THREE.TextGeometry( 'X', {
+	// 	font: 'font',
+	// 	size: 10,
+	// 	height: 3,
+	// 	curveSegments: 12,
+	// 	bevelEnabled: true,
+	// 	bevelThickness: 10,
+	// 	bevelSize: 8,
+	// 	bevelSegments: 5
+	// });
 
-  scene.add(lineX, lineY, lineZ, textX);
+  scene.add(lineX, lineY, lineZ);
 
 	app.appendChild(renderer.domElement);
 
