@@ -21,8 +21,14 @@
 	});
 
 	var mesh = new THREE.Mesh(geometry, material);
-	scene.add(mesh);
 
+  var pointGeometry = new THREE.SphereGeometry(2, 10, 10);
+  var pointMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+  var point = new THREE.Mesh(pointGeometry, pointMaterial);
+  point.position.x = 30;
+  // point.position.y = 30;
+
+  scene.add(mesh ,point);
 	var renderer = new THREE.WebGLRenderer();
 	renderer.setSize(window.innerWidth, window.innerHeight);
 
