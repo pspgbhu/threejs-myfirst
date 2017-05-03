@@ -1,5 +1,6 @@
 ;(function functionName() {
   var camera = window.three.camera;
+  var mesh = window.three.mesh;
 
   var inputPosition = {
     x: document.querySelector('#positionX'),
@@ -7,24 +8,46 @@
     z: document.querySelector('#positionZ'),
   };
 
-  inputPosition.x.value = window.three.camera.position.x;
-  inputPosition.y.value = window.three.camera.position.y;
-  inputPosition.z.value = window.three.camera.position.z;
-
   var inputLookAt = {
     x: document.querySelector('#lookAtX'),
     y: document.querySelector('#lookAtY'),
     z: document.querySelector('#lookAtZ'),
   };
 
+  inputPosition.x.value = camera.position.x;
+  inputPosition.y.value = camera.position.y;
+  inputPosition.z.value = camera.position.z;
+
+  inputLookAt.x.value = camera.target.x;
+  inputLookAt.y.value = camera.target.y;
+  inputLookAt.z.value = camera.target.z;
+
+
+  if (mesh) {
+    var inputMesh = {
+      x: document.querySelector('#meshX'),
+      y: document.querySelector('#meshY'),
+      z: document.querySelector('#meshZ'),
+    }
+
+    inputMesh.x.value = mesh.position.x;
+    inputMesh.y.value = mesh.position.y;
+    inputMesh.z.value = mesh.position.z;
+
+    for(var key in inputMesh) {
+      ;(function (_key) {
+        inputMesh[_key].oninput = function () {
+          mesh.position[_key] = this.value * 1;
+        }
+      })(key);
+    }
+  }
+
+
   var btnLookAt = document.querySelector("#toLookAt");
   btnLookAt.onclick = function () {
     camera.lookAt(camera.target);
   }
-
-  inputLookAt.x.value = window.three.camera.target.x;
-  inputLookAt.y.value = window.three.camera.target.y;
-  inputLookAt.z.value = window.three.camera.target.z;
 
   for(var key in inputPosition) {
     ;(function (_key) {
